@@ -1,0 +1,6 @@
+{
+	"appId": "com.cefa.checklist",
+	"appName": "Checklist Munck",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

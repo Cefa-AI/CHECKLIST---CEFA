@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Checklist Caminhões Munck</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#121212">
+    <link rel="apple-touch-icon" href="icon-192.svg">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-container" id="main-ui">
+    
+    <header class="app-header">
+        <div class="header-logo">CM</div>
+        <div class="header-titles">
+            <h1>Checklist Veicular</h1>
+            <h2>Caminhões Munck</h2>
+        </div>
+    </header>
+
+    <div id="error-message" class="error-banner hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <span>Atenção: Você deve preencher todos os campos obrigatórios para continuar!</span>
+    </div>
+
+    <form id="checklist-form" novalidate>
+        
+        <!-- SECTION 1: INFORMAÇÕES BÁSICAS -->
+        <section class="card">
+            <h3 class="section-title">Informações Básicas</h3>
+            
+            <div class="form-group">
+                <label for="q1">1. DATA DA VERIFICAÇÃO <span class="req">*</span></label>
+                <input type="date" id="q1" name="q1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="q2">2. Turno de inspeção <span class="req">*</span></label>
+                <select id="q2" name="q2" required>
+                    <option value="" disabled selected>Selecione o turno...</option>
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="q3">3. Nome do motorista <span class="req">*</span></label>
+                <input type="text" id="q3" name="q3" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="q4">4. Patrimonio <span class="req">*</span></label>
+                <input type="text" id="q4" name="q4" placeholder="Placa ou número do veículo" required>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ITENS DO CHECKLIST -->
+        <section class="card">
+            <h3 class="section-title">Inspeção de Itens</h3>
+            <p class="section-subtitle">Avalie o estado de cada item.</p>
+
+            <div class="checklist-items">
+                
+                <div class="check-item-row" data-id="q5">
+                    <div class="check-label">5. Faróis, Setas e Lanternas <span class="req">*</span></div>
+                    <div class="check-options">
+                        <input type="radio" id="q5_sim" name="q5" value="SIM" required> <label class="btn-opt opt-sim" for="q5_sim">SIM</label>
+                        <input type="radio" id="q5_nao" name="q5" value="NÃO"> <label class="btn-opt opt-nao" for="q5_nao">NÃO</label>
+                    </div>
+                </div>
+
+                <div class="check-item-row" data-id="q6">
+                    <div class="check-label">6. Limpadores de para brisas <span class="req">*</span></div>
+                    <div class="check-options">
+                        <input type="radio" id="q6_sim" name="q6" value="SIM" required> <label class="btn-opt opt-sim" for="q6_sim">SIM</label>
+                        <input type="radio" id="q6_nao" name="q6" value="NÃO"> <label class="btn-opt opt-nao" for="q6_nao">NÃO</label>
+                     </div>
+                </div>
+
+                <div class="check-item-row" data-id="q7">
+                    <div class="check-label">7. Funcionamento do pisca alerta, Luz de ré e de Freio e Alarme de ré. <span class="req">*</span></div>
+                    <div class="check-options">
+                        <input type="radio" id="q7_sim" name="q7" value="SIM" required> <label class="btn-opt opt-sim" for="q7_sim">SIM</label>
+                        <input type="radio" id="q7_nao" name="q7" value="NÃO"> <label class="btn-opt opt-nao" for="q7_nao">NÃO</label>
+                     </div>
+                </div>
+
+                <div class="check-item-row" data-id="q8">
+                    <div class="check-label">8. Sistema de freio <span class="req">*</span></div>
+                    <div class="check-options">
+                        <input type="radio" id="q8_sim" name="q8" value="SIM" required> <label class="btn-opt opt-sim" for="q8_sim">SIM</label>
+                        <input type="radio" id="q8_nao" name="q8" value="NÃO"> <label class="btn-opt opt-nao" for="q8_nao">NÃO</label>
+                     </div>
+                </div>
+
+                <div class="check-item-row" data-id="q9">
+                    <div class="check-label">9. Verificação do cardan <span class="req">*</span></div>
+                    <div class="check-options">
+                        <input type="radio" id="q9_sim" name="q9" value="SIM" required> <label class="btn-opt opt-sim" for="q9_sim">SIM</label>
+                        <input type="radio" id="q9_nao" name="q9" value="NÃO"> <label class="btn-opt opt-nao" for="q9_nao">NÃO</label>
+                     </div>
+                </div>
+
+                <div class="check-item-row" data-id="q10">
+                    <div class="check-label">10. Verificação dos cubos de roda <span class="req">*</span></div>
+                    <div class="check-options">
+                        <input type="radio" id="q10_sim" name="q10" value="SIM" required> <label class="btn-opt opt-sim" for="q10_sim">SIM</label>
+                        <input type="radio" id="q10_nao" name="q10" value="NÃO"> <label class="btn-opt opt-nao" for="q10_nao">NÃO</label>
+                     </div>
+                </div>
+
+                <div class="check-item-row" data-id="q11">
+                    <div class="check-label">11. Cinto de segurança <span class="req">*</span></div>
+                    <div class="check-options">
+                        <input type="radio" id="q11_sim" name="q11" value="SIM" required> <label class="btn-opt opt-sim" for="q11_sim">SIM</label>
+                        <input type="radio" id="q11_nao" name="q11" value="NÃO"> <label class="btn-opt opt-nao" for="q11_nao">NÃO</label>
+                     </div>
+                </div>
+
+                <div class="check-item-row" data-id="q12">
+                    <div class="check-label">12. Buzina <span class="req">*</span></div>
+                    <div class="check-options">
+                        <input type="radio" id="q12_sim" name="q12" value="SIM" required> <label class="btn-opt opt-sim" for="q12_sim">SIM</label>
+                        <input type="radio" id="q12_nao" name="q12" value="NÃO"> <label class="btn-opt opt-nao" for="q12_nao">NÃO</label>
+                     </div>
+                </div>
+
+                <div class="check-item-row" data-id="q13">
+                    <div class="check-label">13. Braço hidráulico, lança e articulação <span class="req">*</span></div>
+                    <div class="check-options">
+                        <input type="radio" id="q13_sim" name="q13" value="SIM" required> <label class="btn-opt opt-sim" for="q13_sim">SIM</label>
+                        <input type="radio" id="q13_nao" name="q13" value="NÃO"> <label class="btn-opt opt-nao" for="q13_nao">NÃO</label>
+                     </div>
+                </div>
+
+                <div class="check-item-row" data-id="q14">
+                    <div class="check-label">14. Estado geral dos pneus (Desgaste, Calibração) <span class="req">*</span></div>
+                    <div class="check-options">
+                        <input type="radio" id="q14_sim" name="q14" value="SIM" required> <label class="btn-opt opt-sim" for="q14_sim">SIM</label>
+                        <input type="radio" id="q14_nao" name="q14" value="NÃO"> <label class="btn-opt opt-nao" for="q14_nao">NÃO</label>
+                     </div>
+                </div>
+
+                <div class="check-item-row" data-id="q15">
+                    <div class="check-label">15. Bateria <span class="req">*</span></div>
+                    <div class="check-options">
+                        <input type="radio" id="q15_sim" name="q15" value="SIM" required> <label class="btn-opt opt-sim" for="q15_sim">SIM</label>
+                        <input type="radio" id="q15_nao" name="q15" value="NÃO"> <label class="btn-opt opt-nao" for="q15_nao">NÃO</label>
+                     </div>
+                </div>
+
+                <div class="check-item-row" data-id="q16">
+                    <div class="check-label">16. Ar condicionado <span class="req">*</span></div>
+                    <div class="check-options">
+                        <input type="radio" id="q16_sim" name="q16" value="SIM" required> <label class="btn-opt opt-sim" for="q16_sim">SIM</label>
+                        <input type="radio" id="q16_nao" name="q16" value="NÃO"> <label class="btn-opt opt-nao" for="q16_nao">NÃO</label>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: CÂMERA E FOTOS -->
+        <section class="card">
+            <h3 class="section-title">Fotos da Inspeção</h3>
+            <p class="section-subtitle">Tire até 10 fotos. Todas serão incluídas no relatório PDF.</p>
+            
+            <div class="camera-container">
+                <input type="file" id="camera-input" accept="image/*" capture="environment" multiple style="display: none;">
+                <button type="button" id="btn-camera" class="btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                    Tirar Foto / Anexar (<span id="photo-count">0</span>/10)
+                </button>
+            </div>
+            
+            <div id="photo-gallery" class="photo-gallery">
+                <!-- Fotos aparecerão aqui -->
+            </div>
+        </section>
+
+        <!-- SECTION 4: FINALIZAÇÃO -->
+        <section class="card">
+            <h3 class="section-title">Finalização</h3>
+
+            <div class="form-group">
+                <label for="q17">17. Quando engraxado munck e patolas ? <span class="req">*</span></label>
+                <input type="date" id="q17" name="q17" required>
+            </div>
+
+            <div class="form-group">
+                <label for="q18">18. Observações, reparos e defeitos. (Opcional)</label>
+                <textarea id="q18" name="q18" rows="3" maxlength="120" placeholder="Escreva até 120 caracteres..."></textarea>
+                <div class="char-counter"><span id="char-count">0</span> / 120 caracteres</div>
+            </div>
+        </section>
+
+        <div class="action-bar">
+            <button type="button" id="btn-submit" class="btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                Gerar Relatório e Salvar
+            </button>
+        </div>
+
+    </form>
+</div>
+
+<!-- Container Oculto para o PDF Limpo -->
+<div id="pdf-container" style="position: absolute; left: -9999px; top: -9999px; width: 800px; background: white; color: black; padding: 20px;">
+    <!-- Estrutura gerada via JS -->
+</div>
+
+<!-- Scripts -->
+<script src="html2pdf.bundle.min.js"></script>
+<script>
+    if (typeof html2pdf === 'undefined') {
+        document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"><\/script>');
+    }
+</script>
+<!-- Capacitor Injection -->
+<script src="capacitor.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "checklist-munck",
+  "version": "1.0.0",
+  "description": "Offline Munck Checklist for Android",
+  "main": "index.js",
+  "scripts": {
+    "android": "npx cap copy android && npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "latest",
+    "@capacitor/core": "latest",
+    "@capacitor/filesystem": "latest"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "latest"
+  }
+}
