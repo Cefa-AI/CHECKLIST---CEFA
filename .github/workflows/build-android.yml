@@ -26,8 +26,10 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Sync Capacitor Android
-        run: npx cap sync android
+      - name: Generate Fresh Android Project
+        run: |
+          rm -rf android
+          npx cap add android
 
       - name: Build Android APK (Debug)
         working-directory: ./android
